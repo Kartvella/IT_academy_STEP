@@ -1,2 +1,0 @@
-this line is from sample.txt
-this line is from sample2.txt
