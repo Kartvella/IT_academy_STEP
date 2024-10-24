@@ -77,7 +77,7 @@ def split_file_by_lines(input_filename, max_lines=10):
         with open(part_filename, 'w') as output_file:
             output_file.write('\n'.join(lines[i:i + max_lines]))
         print(f"Created: {part_filename}")
-with open('fifth.txt', 'r') as file:
+with open('Lecture 11 - Files//fifth.txt', 'r') as file:
     split_file_by_lines("fifth.txt")
 
 
