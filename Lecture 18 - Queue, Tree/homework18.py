@@ -84,11 +84,11 @@ tree.insert(4)
 
 
 #       10
-#      /  \
+#      /   \
 #     5    15
-#    / \   / \
+#    / \  /  \
 #   4   9|14  16
 
-
-print('total edges: ', tree.count_edges())
-print('leaves: ', tree.findLeaves(tree.root))
+tree.printParents()
+# print('total edges: ', tree.count_edges())
+# print('leaves: ', tree.findLeaves(tree.root))

@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Wireless Bluetooth Headphones",
+        "price": 59.99,
+        "quantity": 120
+    },
+    {
+        "name": "Stainless Steel Water Bottle",
+        "price": 19.99,
+        "quantity": 350
+    },
+    {
+        "name": "Organic Cotton T-Shirt",
+        "price": 25.0,
+        "quantity": 200
+    },
+    {
+        "name": "Portable Power Bank 10000mAh",
+        "price": 29.99,
+        "quantity": 150
+    },
+    {
+        "name": "Adjustable Ergonomic Office Chair",
+        "price": 249.99,
+        "quantity": 50
+    },
+    {
+        "name": "LED Desk Lamp with USB Charging Port",
+        "price": 39.99,
+        "quantity": 85
+    },
+    {
+        "name": "Smart Home Wi-Fi Plug",
+        "price": 14.99,
+        "quantity": 400
+    }
+]
