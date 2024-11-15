@@ -1,54 +1,47 @@
-import json
+#Exercise N1
 
+import json
 class Product:
     def __init__(self, name, price, quantity):
         self.name = name
         self.price = price
         self.quantity = quantity
 
-    def to_dict(self):
+    def __str__(self):
+        return f"name: {self.name}, price: {self.price}, quantity: {self.quantity}"
+
+def custom_serializer(product):
+    if isinstance(product, Product):
         return {
-            'name': self.name,
-            'price': self.price,
-            'quantity': self.quantity
+            "name": product.name,
+            "price": product.price,
+            "quantity": product.quantity
         }
+    raise TypeError("object of type Product is not JSON serializable")
 
-    @classmethod
-    def from_dict(cls, data):
-        return cls(name=data['name'], price=data['price'], quantity=data['quantity'])
+def custom_deserializer(json_obj):
+    return Product(json_obj['name'], json_obj['price'], json_obj['quantity'])
 
-def serialize_products(products, filename='products.json'):
-    try:
-        with open(filename, 'w') as json_file:
-            json.dump([product.to_dict() for product in products], json_file, indent=4)
-    except Exception as e:
-        print(f'error occurred during serialization: {e}')
-
-def deserialize_products(filename='products.json'):
-    try:
-        with open(filename, 'r') as json_file:
-            data = json.load(json_file)
-            return [Product.from_dict(item) for item in data]
-    except Exception as e:
-        print(f"error occurred during deserialization: {e}")
-        return []
-
-products = [
-    Product(name="Wireless Bluetooth Headphones", price=59.99, quantity=120),
-    Product(name="Stainless Steel Water Bottle", price=19.99, quantity=350),
-    Product(name="Organic Cotton T-Shirt", price=25.00, quantity=200),
-    Product(name="Portable Power Bank 10000mAh", price=29.99, quantity=150),
-    Product(name="Adjustable Ergonomic Office Chair", price=249.99, quantity=50),
-    Product(name="LED Desk Lamp with USB Charging Port", price=39.99, quantity=85),
-    Product(name="Smart Home Wi-Fi Plug", price=14.99, quantity=400)
+product_list = [
+    Product("laptop", 1500, 5),
+    Product("mouse", 20, 50),
+    Product("keyboard", 30, 30)
 ]
 
-serialize_products(products)
+json_data = json.dumps(product_list, default=custom_serializer, indent=4)
+with open('Lecture 19 - serialization/products.json', 'w') as file:
+    file.write(json_data)
 
-loaded_products = deserialize_products()
+print("serialized JSON Data:")
+print(json_data)
 
+with open('Lecture 19 - serialization/products.json', 'r') as file:
+    loaded_products = json.load(file, object_hook=custom_deserializer)
+
+print("\ndeserialized Product Objects:")
 for product in loaded_products:
-    print(product.__dict__)
+    print(product)
+
 
 #Exercise N2
 
