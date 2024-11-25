@@ -1,0 +1,22 @@
+{
+    "id": 2,
+    "name": "Bob",
+    "age": 30,
+    "city": "San Francisco",
+    "email": "bob@example.com",
+    "skills": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+    ],
+    "projects": [
+        {
+            "name": "Website Redesign",
+            "duration": "3 months"
+        },
+        {
+            "name": "Mobile App",
+            "duration": "8 months"
+        }
+    ]
+}

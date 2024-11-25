@@ -1,0 +1,22 @@
+{
+    "id": 1,
+    "name": "Alice",
+    "age": 25,
+    "city": "New York",
+    "email": "alice@example.com",
+    "skills": [
+        "Python",
+        "Java",
+        "C++"
+    ],
+    "projects": [
+        {
+            "name": "Project Alpha",
+            "duration": "6 months"
+        },
+        {
+            "name": "Project Beta",
+            "duration": "4 months"
+        }
+    ]
+}

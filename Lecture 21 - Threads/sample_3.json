@@ -1,0 +1,22 @@
+{
+    "id": 3,
+    "name": "Charlie",
+    "age": 35,
+    "city": "Boston",
+    "email": "charlie@example.com",
+    "skills": [
+        "Go",
+        "Rust",
+        "Kotlin"
+    ],
+    "projects": [
+        {
+            "name": "Cloud Migration",
+            "duration": "12 months"
+        },
+        {
+            "name": "Backend Optimization",
+            "duration": "5 months"
+        }
+    ]
+}
