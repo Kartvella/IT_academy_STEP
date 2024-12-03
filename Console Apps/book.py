@@ -92,7 +92,7 @@ class BookManager:
         # შემდეგ გადავატარებთ წიგნთა სიას
         for book in self._books:
             # თუ წიგნის სათაური ემთხვევა გადაწოდებულ სათაურს
-            if book._title == title:
+            if book._title.lower() == title:
                 # წასაშლელი წიგნი იქნება ეგ წიგნი
                 book_to_remove = book
                 # და ლუპიდან გამოვალთ
@@ -106,7 +106,7 @@ class BookManager:
         else:
             print(f"Book with title '{title}' was not found.")
 
-    def save_books_to_file(self, filename: str = 'Console Apps/books.json') -> None:
+    def save_books_to_file(self, filename: str = 'books.json') -> None:
         # ვცდით შემდეგ ლოგიკას
         try:
             # გადაწოდებულ ფაილს წინიდან დავუმატებთ 'Console Apps/',
